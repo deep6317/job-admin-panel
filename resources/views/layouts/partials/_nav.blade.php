@@ -94,29 +94,15 @@
                     </a>
                     <ul class="show-notification profile-notification">
                         <li class="waves-effect waves-light">
-                            <a href="#!">
-                                <i class="ti-settings"></i> Settings
+                            <a href="{{ route('logout') }}"  
+                               onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                                <i class="ti-layout-sidebar-left"></i> {{ __('Logout') }}
                             </a>
-                        </li>
-                        <li class="waves-effect waves-light">
-                            <a href="user-profile.html">
-                                <i class="ti-user"></i> Profile
-                            </a>
-                        </li>
-                        <li class="waves-effect waves-light">
-                            <a href="email-inbox.html">
-                                <i class="ti-email"></i> My Messages
-                            </a>
-                        </li>
-                        <li class="waves-effect waves-light">
-                            <a href="auth-lock-screen.html">
-                                <i class="ti-lock"></i> Lock Screen
-                            </a>
-                        </li>
-                        <li class="waves-effect waves-light">
-                            <a href="auth-normal-sign-in.html">
-                                <i class="ti-layout-sidebar-left"></i> Logout
-                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}"
+                                method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </li>
